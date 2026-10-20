@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Portal Escolar{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="topo">
+        <h1><a href="{% url 'noticias:noticia_lista' %}">Portal Escolar</a></h1>
+        <nav>
+            <a href="{% url 'noticias:noticia_lista' %}">Notícias</a>
+            <a href="{% url 'noticias:categoria_lista' %}">Categorias</a>
+            <a href="{% url 'noticias:tag_lista' %}">Tags</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer class="rodape">
+        <p>Mão na Massa: Portal Escolar &mdash; prática Django</p>
+    </footer>
+</body>
+</html>

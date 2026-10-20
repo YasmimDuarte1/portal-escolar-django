@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Notícias | Portal Escolar{% endblock %}
+
+{% block conteudo %}
+    <h2>Notícias</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Categoria</th>
+                <th>Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for noticia in noticias %}
+            <tr>
+                <td><a href="{% url 'noticias:noticia_detalhe' noticia.id %}">{{ noticia.titulo }}</a></td>
+                <td>{{ noticia.categoria.nome }}</td>
+                <td>
+                    {% for tag in noticia.tags.all %}{{ tag.titulo }}{% if not forloop.last %}, {% endif %}{% empty %}&mdash;{% endfor %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">Nenhuma notícia cadastrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

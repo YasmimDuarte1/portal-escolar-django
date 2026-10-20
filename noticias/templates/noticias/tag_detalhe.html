@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{ tag.titulo }} | Portal Escolar{% endblock %}
+
+{% block conteudo %}
+    <a href="{% url 'noticias:tag_lista' %}">&larr; Voltar para Tags</a>
+    <h2>{{ tag.titulo }}</h2>
+    <p><strong>Notícias com esta tag:</strong></p>
+    <ul>
+        {% for noticia in tag.noticias.all %}
+        <li><a href="{% url 'noticias:noticia_detalhe' noticia.id %}">{{ noticia.titulo }}</a></li>
+        {% empty %}
+        <li>Nenhuma notícia com esta tag.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

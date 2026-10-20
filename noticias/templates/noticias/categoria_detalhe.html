@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{ categoria.nome }} | Portal Escolar{% endblock %}
+
+{% block conteudo %}
+    <a href="{% url 'noticias:categoria_lista' %}">&larr; Voltar para Categorias</a>
+    <h2>{{ categoria.nome }}</h2>
+    <p><strong>Notícias desta categoria:</strong></p>
+    <ul>
+        {% for noticia in categoria.noticias.all %}
+        <li><a href="{% url 'noticias:noticia_detalhe' noticia.id %}">{{ noticia.titulo }}</a></li>
+        {% empty %}
+        <li>Nenhuma notícia nesta categoria.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+.topo {
+    background-color: #1f3b57;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.topo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.topo nav a {
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+
+.topo nav a:hover {
+    text-decoration: underline;
+}
+
+.conteudo {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #e9eef3;
+}
+
+table a {
+    color: #1f3b57;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+.conteudo a {
+    color: #1f3b57;
+}
+
+.rodape {
+    text-align: center;
+    padding: 1.5rem;
+    color: #777;
+    font-size: 0.9rem;
+}

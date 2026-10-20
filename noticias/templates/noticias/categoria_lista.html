@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Categorias | Portal Escolar{% endblock %}
+
+{% block conteudo %}
+    <h2>Categorias</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for categoria in categorias %}
+            <tr>
+                <td><a href="{% url 'noticias:categoria_detalhe' categoria.id %}">{{ categoria.nome }}</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>Nenhuma categoria cadastrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

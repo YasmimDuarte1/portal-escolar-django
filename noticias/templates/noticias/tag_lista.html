@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Tags | Portal Escolar{% endblock %}
+
+{% block conteudo %}
+    <h2>Tags</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tag in tags %}
+            <tr>
+                <td><a href="{% url 'noticias:tag_detalhe' tag.id %}">{{ tag.titulo }}</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>Nenhuma tag cadastrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
